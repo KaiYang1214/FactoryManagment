@@ -1,0 +1,204 @@
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
+import { Table, Divider, Space, Input, Button } from 'antd';
+import Highlighter from 'react-highlight-words';
+import { SearchOutlined } from '@ant-design/icons';
+import { getConstObject } from '@/utils/common';
+import { useModal, useQuery } from '@/hooks/';
+import { TableApi } from '@/apis/';
+import { DATE_TYPE, PREVIEW_STATUS, SYSTEM_TYPE } from '@/constants/index';
+import DetailModal from '../TableList/DetailModal';
+
+const TableList = ({
+  userId,
+  allowed,
+  showDetail = true,
+  hideData = [],
+  tableType,
+  page,
+  pageSize,
+}) => {
+  const detailModal = useModal();
+
+  const getApproveListQuery = useQuery(TableApi.getApproveList);
+
+  const [state, setState] = useState([]);
+  let searchInput;
+
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    setState({
+      searchText: selectedKeys[0],
+      searchedColumn: dataIndex,
+    });
+  };
+
+  const handleReset = clearFilters => {
+    clearFilters();
+    setState({ searchText: '' });
+  };
+
+  const getColumnSearchProps = dataIndex => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+    }) => (
+      <div style={{ padding: 8 }}>
+        <Input
+          ref={node => {
+            searchInput = node;
+          }}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={e =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{ width: 188, marginBottom: 8, display: 'block' }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => handleReset(clearFilters)}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Reset
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: filtered => (
+      <SearchOutlined style={{ color: filtered ? '#d8800d' : undefined }} />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex]
+        ? record[dataIndex]
+          .toString()
+          .toLowerCase()
+          .includes(value.toLowerCase())
+        : '',
+    onFilterDropdownVisibleChange: visible => {
+      if (visible) {
+        setTimeout(() => searchInput.select(), 100);
+      }
+    },
+    render: text =>
+      state.searchedColumn === dataIndex ? (
+        <Highlighter
+          highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
+          searchWords={[state.searchText]}
+          autoEscape
+          textToHighlight={text ? text.toString() : ''}
+        />
+      ) : (
+          text
+        ),
+  });
+
+  const columns = [
+    {
+      title: 'Table Name',
+      dataIndex: 'tableName',
+      ...getColumnSearchProps('tableName'),
+    },
+    {
+      title: 'User Name',
+      dataIndex: 'applyUserName',
+    },
+    {
+      title: 'User Id',
+      dataIndex: 'userId',
+    },
+    {
+      title: 'Department',
+      dataIndex: 'dept',
+    },
+    {
+      title: 'Project',
+      dataIndex: 'project',
+    },
+    {
+      title: 'Reason',
+      dataIndex: 'reason',
+    },
+    {
+      title: 'Type',
+      dataIndex: 'type',
+      filters: [
+        {
+          text: SYSTEM_TYPE.props.WDC.key,
+          value: SYSTEM_TYPE.props.WDC.key,
+        },
+      ],
+      onFilter: (value, record) => record.type.indexOf(value) === 0,
+    },
+    {
+      title: 'Status',
+      dataIndex: 'allowed',
+      render: value => getConstObject(PREVIEW_STATUS, value).name,
+    },
+    {
+      title: 'Update Time',
+      dataIndex: 'updateTime',
+      render: updateTime => moment(updateTime).format(DATE_TYPE.DATE_TIME),
+    },
+  ];
+
+  const getApproveList = async () => {
+    try {
+      if (tableType.length !== 0) {
+        await getApproveListQuery.exec({
+          userId,
+          allowed,
+          tableType,
+          page,
+          pageSize,
+        });
+      } else await getApproveListQuery.exec({ userId, allowed });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getApproveList();
+  }, []);
+
+  return (
+    <>
+      <Divider style={{ padding: '16px 0', margin: 0, background: 'white' }} orientation="left">Wisdom-DeliverZone</Divider>
+      <Table
+        columns={columns.filter(c => !hideData.includes(c.dataIndex))}
+        dataSource={getApproveListQuery.data.results}
+        scroll={{ x: 'max-content' }}
+        pagination={{
+          position: 'bottom',
+          defaultPageSize: 10,
+        }}
+        rowKey="guid"
+        loading={getApproveListQuery.isLoading}
+        onRow={record => ({
+          onClick: () => (showDetail ? detailModal.openModal(record) : null),
+          style: { cursor: showDetail ? 'pointer' : 'auto' },
+        })}
+      />
+      <DetailModal modal={detailModal} onFinish={getApproveList} />
+    </>
+  );
+};
+
+TableList.propTypes = {};
+
+TableList.defaultProps = {};
+
+export default TableList;

@@ -1,0 +1,8 @@
+{
+  "@primary-color": "#20a7c9",
+  "@layout-header-background": "#808080",
+  "@layout-body-background": "#e6e6e6",
+  "@item-hover-bg": "#BDC0BA",
+  "@select-item-selected-bg": "#b4e1fe",
+  "@select-item-active-bg": "#b4e1fe"
+}

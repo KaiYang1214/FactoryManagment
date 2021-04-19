@@ -1,0 +1,14 @@
+<svg id="history_btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="矩形_4893" data-name="矩形 4893" width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectangle_119" data-name="Rectangle 119" width="28" height="28" rx="14" fill="#f5f5f5" opacity="0"/>
+  <g id="组_7480" data-name="组 7480" transform="translate(2 2)">
+    <g id="组_7477" data-name="组 7477" clip-path="url(#clip-path)">
+      <path id="路径_2200" data-name="路径 2200" d="M12.87,3.011a9,9,0,0,0-8.811,7.213H2.141l2.8,2.794,2.8-2.794H6.119a6.985,6.985,0,1,1,6.751,8.765v2a8.989,8.989,0,0,0,0-17.978" fill="#3177d8"/>
+      <path id="路径_2201" data-name="路径 2201" d="M18.726,12.016a5.9,5.9,0,0,0-2.584-4.863A5.842,5.842,0,0,0,7.7,9.291H10.23L8.557,10.958,6.912,12.6A5.914,5.914,0,0,0,11.9,17.879a5.992,5.992,0,0,0,.9.076,5.919,5.919,0,0,0,5.923-5.916l0-.023m-3.3.648H12.3V9.525a.75.75,0,0,1,1.5,0v1.639H15.43a.75.75,0,0,1,0,1.5" fill="#3177d8"/>
+    </g>
+  </g>
+</svg>

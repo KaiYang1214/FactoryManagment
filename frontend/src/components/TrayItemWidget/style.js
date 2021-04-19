@@ -1,0 +1,14 @@
+import styled from 'styled-components';
+
+export const trayItem = styled.div`
+    color: white;
+    padding: 5px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    border: solid 2px black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+`;

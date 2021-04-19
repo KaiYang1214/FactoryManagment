@@ -1,0 +1,43 @@
+{
+  "COMMON": {
+    "BROWSER_VERSION": "瀏覽器版本支援：Chrome 69（含以上）",
+    "NEW": "New",
+    "ONGOING": "進行中",
+    "CLOSED": "已結案／取消",
+    "OPEN": "Open",
+    "KEYWORD_SEARCH": "關鍵字搜尋",
+    "WITHIN_THREE_MONTHS": "三個月內",
+    "WITHIN_SIX_MONTHS": "六個月內",
+    "WITHIN_ONE_YEAR": "一年內",
+    "CUSTOM_RANGE": "自訂區間",
+    "SEARCH_RESULT_TITLE": "搜尋結果",
+    "TOTAL_RESULT_FOUND_DATA": "符合資料共<0>{{count}}</0>筆",
+    "TOTAL_RESULT_FOUND": "符合條件共<0>{{count}}</0>筆",
+    "NO_MATCHING_RESULT_FOUND": "無符合資料結果",
+    "PLEASE_SELECT_DATE": "請選擇日期",
+    "PLEASE_SELECT": "請選擇",
+    "PLEASE_INPUT": "請輸入...",
+    "LOGIN": "Sign in with",
+    "SEARCH_KEYWORD": "Search Keyword"
+  },
+  "MENU": {
+    "DATA_PIPELINE": "Data Pipeline",
+    "GROUP": "Group",
+    "SETTINGS": "Settings",
+    "CREATE_PIPELINE": "Create pipeline",
+    "TABLE_PERMISSION": "Table Permission",
+    "WORKSPACE": "Workspace",
+    "MANAGEMENT": "Management",
+    "PERMISSION": "Permission",
+    "SECURITY": "Security",
+    "LIST_USERS": "List Users",
+    "LOGOUT": "Logout",
+    "MANUAL_DOWNLOAD": "Operation Manual Download"
+  },
+  "LISTUSER": {
+    "TITLE": "List Users",
+    "NAME": "Name",
+    "EMPLOYEE_ID": "Employee ID",
+    "PERMISSION": "Permission"
+  }
+}

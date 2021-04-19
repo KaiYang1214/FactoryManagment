@@ -1,0 +1,10 @@
+<svg id="ic_projectworksheet_w" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="路径_2077" data-name="路径 2077" d="M-307.478,910.98c0-.034-.008-.066-.01-.1,0,.035.01.067.01.1Z" transform="translate(314.013 -900.424)" fill="#3177d8"/>
+  <rect id="Rectangle_119" data-name="Rectangle 119" width="24" height="24" fill="#fff" opacity="0"/>
+  <g id="组_7332" data-name="组 7332" transform="translate(314.013 -900.424)">
+    <line id="直线_516" data-name="直线 516" x2="6.177" transform="translate(-305.102 909.882)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="直线_517" data-name="直线 517" x2="6.177" transform="translate(-305.102 913.067)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="直线_518" data-name="直线 518" x2="6.177" transform="translate(-305.102 916.251)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <path id="路径_2078" data-name="路径 2078" d="M-299.089,906.4c0-1.139-1.309-2.062-2.924-2.062s-2.924.923-2.924,2.062h-3.543v13.648h12.933V906.4Z" transform="translate(314.013 -900.424)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+</svg>

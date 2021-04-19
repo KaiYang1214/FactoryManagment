@@ -1,0 +1,43 @@
+{
+  "COMMON": {
+    "BROWSER_VERSION": "Supported browser version include Chrome 69 or above",
+    "NEW": "New",
+    "ONGOING": "Ongoing",
+    "CLOSED": "Closed / Pending",
+    "OPEN": "Open",
+    "KEYWORD_SEARCH": "Keyword",
+    "WITHIN_THREE_MONTHS": "Within 3 months",
+    "WITHIN_SIX_MONTHS": "Within 6 months",
+    "WITHIN_ONE_YEAR": "Within 1 year",
+    "CUSTOM_RANGE": "Custom Range",
+    "SEARCH_RESULT_TITLE": "Search Results",
+    "TOTAL_RESULT_FOUND_DATA": "<0>{{count}}</0> item(s) were found",
+    "TOTAL_RESULT_FOUND": "<0>{{count}}</0> item(s) were found",
+    "NO_MATCHING_RESULT_FOUND": "No matching result found",
+    "PLEASE_SELECT_DATE": "Please select a date",
+    "PLEASE_SELECT": "Please select",
+    "PLEASE_INPUT": "Please enter",
+    "LOGIN": "Sign in with",
+    "SEARCH_KEYWORD": "Search Keyword"
+  },
+  "MENU": {
+    "DATA_PIPELINE": "Data Pipeline",
+    "GROUP": "Group",
+    "SETTINGS": "Settings",
+    "CREATE_PIPELINE": "Create pipeline",
+    "TABLE_PERMISSION": "Table Permission",
+    "WORKSPACE": "Workspace",
+    "MANAGEMENT": "Management",
+    "PERMISSION": "Permission",
+    "SECURITY": "Security",
+    "LIST_USERS": "List Users",
+    "LOGOUT": "Logout",
+    "MANUAL_DOWNLOAD": "Operation Manual Download"
+  },
+  "LISTUSER": {
+    "TITLE": "List Users",
+    "NAME": "Name",
+    "EMPLOYEE_ID": "Employee ID",
+    "PERMISSION": "Permission"
+  }
+}

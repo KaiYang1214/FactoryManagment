@@ -1,0 +1,8 @@
+<svg id="Testitem" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_119" data-name="Rectangle 119" width="24" height="24" fill="#fff" opacity="0"/>
+  <g id="content_paste-24px" transform="translate(2.08 2.08)">
+    <path id="路径_1798" data-name="路径 1798" d="M0,0H19.841V19.841H0Z" fill="none"/>
+    <path id="路径_1799" data-name="路径 1799" d="M16.227,1.653H12.772a2.47,2.47,0,0,0-4.663,0H4.653A1.658,1.658,0,0,0,3,3.307V16.534a1.658,1.658,0,0,0,1.653,1.653H16.227a1.658,1.658,0,0,0,1.653-1.653V3.307A1.658,1.658,0,0,0,16.227,1.653Zm-5.787,0a.827.827,0,1,1-.827.827A.829.829,0,0,1,10.44,1.653Zm5.787,14.881H4.653V3.307H6.307v2.48h8.267V3.307h1.653Z" transform="translate(-0.52)" fill="#fff"/>
+  </g>
+  <text id="T" transform="translate(12 17)" fill="#fff" font-size="10" font-family="LucidaSans-Demi, Lucida Sans" font-weight="300"><tspan x="-3.45" y="0">T</tspan></text>
+</svg>

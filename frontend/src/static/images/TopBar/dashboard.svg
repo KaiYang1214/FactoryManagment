@@ -1,0 +1,23 @@
+<svg id="组件_209_3" data-name="组件 209 – 3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="组_6549" data-name="组 6549" transform="translate(-621 -22)">
+    <g id="矩形_3804" data-name="矩形 3804" transform="translate(624 25)" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="8" height="10" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="8" fill="none"/>
+    </g>
+    <g id="矩形_3805" data-name="矩形 3805" transform="translate(624 37)" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="8" height="6" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="4" fill="none"/>
+    </g>
+  </g>
+  <g id="组件_85_1" data-name="组件 85 – 1">
+    <g id="矩形_3806" data-name="矩形 3806" transform="translate(21 21) rotate(180)" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="8" height="10" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="8" fill="none"/>
+    </g>
+    <g id="矩形_3807" data-name="矩形 3807" transform="translate(21 9) rotate(180)" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="8" height="6" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="4" fill="none"/>
+    </g>
+    <rect id="矩形_3808" data-name="矩形 3808" width="24" height="24" fill="none"/>
+  </g>
+</svg>
