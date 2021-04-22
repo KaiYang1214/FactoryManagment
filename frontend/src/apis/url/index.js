@@ -153,6 +153,7 @@ const LOGIN = {
 
 const LINE = {
   POST_NOTIFY: '/notify',
+  GET_STATUS: '/status',
 };
 
 export {
@@ -177,3 +178,9 @@ export {
   LOGIN,
   LINE
 };
+
+
+// https://notify-bot.line.me/oauth/authorize?response_type=code&scope=notify&response_mode=form_post&client_id=tJWcL5udw1ffoNvyopAWQX&redirect_uri=https://dfab719e2017.ngrok.io&state=f094a459-1d16-42d6-a709-c2b61ec53d60
+
+
+// curl -d "grant_type=authorization_code&redirect_uri=https://dfab719e2017.ngrok.io&client_id=tJWcL5udw1ffoNvyopAWQX&client_secret=J62y6MvxuW73uQOiCa8WohbY8cHXPEU5P4tW1qkUxJL&code=B1pvEFXOJEk4Bm3M1V35fb" https://notify-bot.line.me/oauth/token

@@ -13,3 +13,16 @@ export const postNotify = async (message) => {
     .send();
   return data;
 };
+
+
+
+export const getStatus = async () => {
+  const { data } = await apiClient
+    .get({
+      url: `${LINE.GET_STATUS}`,
+      payload: {},
+      config: {},
+    })
+    .send();
+  return data;
+};

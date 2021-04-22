@@ -11,6 +11,20 @@ const DetailModal = ({ modal, handleOK }) => {
 
   console.log('DetailModal', modal);
 
+  // const getStatus = async () => {
+
+  //   try {
+  //     const result = await LineApi.getStatus();
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getStatus();
+  // }, [])
+
+
   const postLineMsg = async (data) => {
     const message = `${data.name} have problem, ${data.reason}`
     try {

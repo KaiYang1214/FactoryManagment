@@ -3,9 +3,9 @@ import { message as Message } from "antd";
 import env from "@/utils/env";
 
 const API_CONFIG = {
-  baseURL: env.notifyUrl,
+  baseURL: "http://localhost:3000",
   timeout: 600000,
-  token: 'X6WhAHvJdbhod51EH60nteqUC6Gx4rvHgRJqv4d8XkB',
+  token: 'IxS8bYck4lNsYQ2sOUxBDjbIHwblMF3tMc86Fi9VaQX',
 };
 
 
@@ -18,10 +18,11 @@ class AxiosApiClient {
   setHeader(headerObject = null) {
 
     const defaultHeaders = {
-      Authorization: `Bearer ${API_CONFIG.token}`,
-      'Content-Security-Policy': 'upgrade-insecure-requests',
-      // 'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Origin': 'https://notify-api.line.me/api',
+      // Authorization: `Bearer ${API_CONFIG.token}`,
+      // 'Content-Security-Policy': 'upgrade-insecure-requests',
+      'Access-Control-Allow-Origin': '*',
+      // 'Content-Type': 'application/x-www-form-urlencoded'
+      // 'Access-Control-Allow-Origin': 'https://notify-api.line.me/api',
     };
     this.axiosInstance.defaults.headers = {
       ...defaultHeaders,
