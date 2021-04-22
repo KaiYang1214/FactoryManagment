@@ -51,5 +51,6 @@ export default {
   GroupPage: {
     Management: "/app/group/management",
     Permission: "/app/group/permission",
-  }
+  },
+  Dashboard: "/app/Dashboard"
 };

@@ -6,17 +6,13 @@ import PropTypes from 'prop-types';
 import { getstoreUserInfo, cookieSync } from "@/utils/common";
 import PATH from "@/utils/path";
 import { useAppStore } from "@/store/appStore";
-import LoadingMask from "@/components/compos/LoadingMask";
 import { Container, Body } from "./style";
 import "./style.css";
 
 // project list page
 const Demo = lazy(() => import("@/containers/ContainersDemo/Demo" /* webpackChunkName:"Demo" */));
-const RoleChange = lazy(() => import("@/containers/RoleChange/" /* webpackChunkName:"RoleChange" */));// 未使用
-const ListUser = lazy(() => import("@/containers/ListUser" /* webpackChunkName:"ListUser" */));
+const Dashboard = lazy(() => import("@/containers/Dashboard" /* webpackChunkName:"Dashboard" */));
 
-const DataPipeline = lazy(() => import("@/containers/DataPipeline" /* webpackChunkName:"DataPipeline123" */));
-const Group = lazy(() => import("@/containers/Group/" /* webpackChunkName:"Group123" */));
 
 const App = ({ history }) => {
   const { setUserInfo, userInfo } = useAppStore();
@@ -44,10 +40,7 @@ const App = ({ history }) => {
       <Suspense fallback={<div>Module loading....</div>}>
         <Switch>
           <Route default path={PATH.Demo} component={Demo} />
-          <Route path={PATH.RoleChange} component={RoleChange} />
-          <Route path={PATH.ListUser} component={ListUser} />
-          <Route path={PATH.DataPipeline} component={DataPipeline} />
-          <Route path={PATH.Group} component={Group} />
+          <Route path={PATH.Dashboard} component={Dashboard} />
         </Switch>
       </Suspense>
     </Container>

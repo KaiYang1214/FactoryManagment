@@ -1,5 +1,4 @@
 import React, { useState, createContext, useContext } from 'react';
-import { TAB_KEY } from "@/constants/index";
 
 export const AppContext = createContext();
 export const useAppStore = () => useContext(AppContext);
@@ -13,8 +12,8 @@ export const AppContextProvider = ({ children }) => {
     email: '',
     access_token: '',
     roles: [], // user 登入資訊,塞入admin,master等等
-  }); 
-  const [currTab, setCurrTab] = useState(TAB_KEY.FIND_DATA);
+  });
+  const [currTab, setCurrTab] = useState('');
   return (
     <AppContext.Provider
       value={{

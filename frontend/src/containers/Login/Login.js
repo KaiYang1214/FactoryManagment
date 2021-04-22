@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import useAxios from "@/hooks/useAxios";
 import env from "@/utils/env";
-import { logoutAAD } from '@/utils/common';
-import logo from '@/static/images/login/wisdom_logo.png';
+import PATH from "@/utils/path";
+import { LaptopOutlined } from '@ant-design/icons';
 import azure from '@/static/images/azure.png';
 
 // msal
@@ -38,68 +38,49 @@ const accessTokenRequest = {
 
 const Login = ({ history }) => {
   const { t } = useTranslation();
-  const [versionClick, setVersionClick] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
-  const [loginErrorModalVisible, setloginErrorModalVisible] = useState(false);
-
-  const query = useAxios({ result: [] });
-
-  const handleVersionClick = () => setVersionClick(true);
-
-  const onModalCancel = async () => {
-    const config = {
-      url: "/azure/logout",
-      method: "get",
-    };
-    await query.exec(config);
-    logoutAAD();
-  };
   const handleLogin = () => {
-    myMSALObj.loginRedirect(LoginRequest);
+    history.push(PATH.Dashboard);
   }
 
-  useEffect(() => {
-    myMSALObj.handleRedirectCallback(() => {
-      myMSALObj.acquireTokenSilent(accessTokenRequest).then(async (accessTokenResponse) => {
-        const { accessToken } = accessTokenResponse;
-        console.log(accessToken);
-      }).catch((error) => {
-        console.log(error);
-      })
-    })
-  }, [])
+  // useEffect(() => {
+  //   myMSALObj.handleRedirectCallback(() => {
+  //     myMSALObj.acquireTokenSilent(accessTokenRequest).then(async (accessTokenResponse) => {
+  //       const { accessToken } = accessTokenResponse;
+  //       console.log(accessToken);
+  //     }).catch((error) => {
+  //       console.log(error);
+  //     })
+  //   })
+  // }, [])
 
   return (
-    !mounted
-      ? (
-        <Style.LoginBody>
-          <Style.LoginContainer>
-            <Style.LoginHeaderContainer>
-              <Style.LoginTitle alt="Wisdom" src={logo} />
-            </Style.LoginHeaderContainer>
-            <Style.LoginTextContainer>
-              <Style.LoginText>{t('COMMON.LOGIN')}</Style.LoginText>
-              <Style.LoginButton onClick={handleLogin} src={azure} />
-            </Style.LoginTextContainer>
-          </Style.LoginContainer>
-          <Style.LoginNotice>
-            <div>
-              {t('COMMON.BROWSER_VERSION')}
-            </div>
-            <div>
+
+    <Style.LoginBody>
+      <Style.LoginContainer>
+        <Style.LoginHeaderContainer>
+          <LaptopOutlined style={{fontSize: 70}} />
+        </Style.LoginHeaderContainer>
+        <Style.LoginTextContainer>
+          <Style.LoginText>{t('COMMON.LOGIN')}</Style.LoginText>
+          <Style.LoginButton onClick={handleLogin} src={azure} />
+        </Style.LoginTextContainer>
+      </Style.LoginContainer>
+      <Style.LoginNotice>
+        <div>
+          {t('COMMON.BROWSER_VERSION')}
+        </div>
+        {/* <div>
               Copyright © 2020 Wistron Corporation. All Rights Reserved.
-            </div>
-          </Style.LoginNotice>
-          <Style.GitVersion onClick={handleVersionClick} actived={versionClick}>
+            </div> */}
+      </Style.LoginNotice>
+      {/* <Style.GitVersion onClick={handleVersionClick} actived={versionClick}>
             <div>Version: {VERSION}</div>
             <div>CommitId: {COMMITHASH}</div>
             <div>Branch: {BRANCH}</div>
-          </Style.GitVersion>
-        </Style.LoginBody>
-      )
-      : null
-  );
+          </Style.GitVersion> */}
+    </Style.LoginBody>
+  )
 };
 
 export default Login;
