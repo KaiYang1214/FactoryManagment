@@ -11,6 +11,7 @@ import * as FlowApi from './FlowApi';
 import * as NotifyApi from './NotifyApi';
 import * as DataFlowApi from './DataFlowApi';
 import * as WorkFlowApi from './WorkFlowApi';
+import * as LineApi from './LineApi';
 
 export {
   AtlasApi,
@@ -26,4 +27,5 @@ export {
   NotifyApi,
   DataFlowApi,
   WorkFlowApi,
+  LineApi
 };

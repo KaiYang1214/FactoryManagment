@@ -151,6 +151,10 @@ const LOGIN = {
   GET_TOKEN_DIRECTLY: '/token/callback/directly'
 };
 
+const LINE = {
+  POST_NOTIFY: '/notify',
+};
+
 export {
   ATLAS_QUERY,
   ETL,
@@ -170,5 +174,6 @@ export {
   NOTIFY,
   DATAFLOW,
   WORKFLOW,
-  LOGIN
+  LOGIN,
+  LINE
 };

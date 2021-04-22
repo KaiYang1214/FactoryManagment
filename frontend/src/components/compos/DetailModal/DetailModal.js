@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Modal } from 'antd';
 import {
   MessageOutlined
  } from "@ant-design/icons";
+import { LineApi } from '../../../apis';
 import * as Style from "./style";
 
 const DetailModal = ({ modal, handleOK }) => {
 
   console.log('DetailModal', modal);
+
+  const postLineMsg = async (data) => {
+    const message = `${data.name} have problem, ${data.reason}`
+    try {
+      const result = await LineApi.postNotify(message);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <Modal
@@ -24,25 +34,12 @@ const DetailModal = ({ modal, handleOK }) => {
           <Style.Block>Station: {modal.modalData.name}</Style.Block>
           <Style.Block>Event Time: {modal.modalData.time}</Style.Block>
           <Style.Block>Reason: {modal.modalData.reason}</Style.Block>
-          <Style.Block>Send an alert message !! <MessageOutlined style={{marginLeft: 30, fontSize: 20, color: '#7BA23F'}} /></Style.Block>
+          <Style.Block>Send an alert message !! <MessageOutlined style={{marginLeft: 30, fontSize: 20, color: '#7BA23F'}} onClick={() => postLineMsg(modal.modalData)} /></Style.Block>
 
         </>
       }
     </Modal>
   );
 };
-
-DetailModal.propTypes = {
-  modal: PropTypes.shape({
-    visible: PropTypes.bool,
-    closeModal: PropTypes.func,
-    modalData: PropTypes.shape({
-      name: PropTypes.string,
-      columns: PropTypes.arrayOf(PropTypes.object),
-    }),
-  }).isRequired,
-};
-
-DetailModal.defaultProps = {};
 
 export default DetailModal;

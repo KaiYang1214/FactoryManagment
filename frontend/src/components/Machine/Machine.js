@@ -8,9 +8,9 @@ import {
   CheckCircleOutlined,
   CloseCircleOutlined
  } from "@ant-design/icons";
- import { useTranslation } from "react-i18next";
- import DetailModal from "../compos/DetailModal/DetailModal.js"
- import { useModal } from '../../hooks';
+import { useTranslation } from "react-i18next";
+import DetailModal from "../compos/DetailModal/DetailModal.js"
+import { useModal } from '../../hooks';
 import * as Style from "./style";
 
 const Machine = ({ data }) => {

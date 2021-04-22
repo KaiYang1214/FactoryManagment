@@ -3,9 +3,12 @@ import { message as Message } from "antd";
 import env from "@/utils/env";
 
 const API_CONFIG = {
-  baseURL: env.serverUrl,
+  baseURL: env.notifyUrl,
   timeout: 600000,
+  token: 'X6WhAHvJdbhod51EH60nteqUC6Gx4rvHgRJqv4d8XkB',
 };
+
+
 
 class AxiosApiClient {
   constructor(apiConfig) {
@@ -15,8 +18,10 @@ class AxiosApiClient {
   setHeader(headerObject = null) {
 
     const defaultHeaders = {
-      Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+      Authorization: `Bearer ${API_CONFIG.token}`,
       'Content-Security-Policy': 'upgrade-insecure-requests',
+      // 'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://notify-api.line.me/api',
     };
     this.axiosInstance.defaults.headers = {
       ...defaultHeaders,
@@ -156,7 +161,7 @@ class AxiosApiClient {
 
       if (statudCode === 401) {
         message = "Token Expired";
-        
+
         window.location.href = `${window.location.origin}`;
       }
 
