@@ -1,5 +1,3 @@
-# 歡樂的 R360 專案
-
 ### 專案架構
 專案基礎架構使用 *React 16.9* hooks，如果你不知道怎麼使用 hooks 可以先參考[官方文件](https://reactjs.org/docs/hooks-intro.html)，
 UI基礎使用 [ant-design](https://ant.design/docs/react/introduce) 一樣好好的熟讀文件。
