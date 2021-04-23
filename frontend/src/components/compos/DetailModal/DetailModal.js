@@ -7,7 +7,7 @@ import {
 import { LineApi } from '../../../apis';
 import * as Style from "./style";
 
-const DetailModal = ({ modal, handleOK }) => {
+const DetailModal = ({ modal, plant }) => {
 
   console.log('DetailModal', modal);
 
@@ -26,7 +26,7 @@ const DetailModal = ({ modal, handleOK }) => {
 
 
   const postLineMsg = async (data) => {
-    const message = `${data.name} have problem, ${data.reason}`
+    const message = `${plant} ${data.name} have problem, ${data.reason} at ${data.time}`
     try {
       const result = await LineApi.postNotify(message);
     } catch (e) {
@@ -38,7 +38,6 @@ const DetailModal = ({ modal, handleOK }) => {
     <Modal
       title="Station Detail"
       visible={modal.visible}
-      onOk={handleOK}
       onCancel={() => modal.closeModal()}
       footer={null}
     >

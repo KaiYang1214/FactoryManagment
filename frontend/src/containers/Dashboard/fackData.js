@@ -55,6 +55,12 @@ export const FactoryData1 = [
         reason: 'insufficient charge',
         time: '2021/4/21 20:20'
       },
+      {
+        name: 'Station 5',
+        status: true,
+        reason: 'insufficient charge',
+        time: '2021/4/21 20:20'
+      },
     ]
   },
   {
@@ -62,13 +68,13 @@ export const FactoryData1 = [
     stationList: [
       {
         name: 'Station 1',
-        status: false,
+        status: true,
         reason: 'power is error',
         time: '2021/4/21 15:20'
       },
       {
         name: 'Station 2',
-        status: true,
+        status: false,
         reason: '',
         time: '2021/4/21 05:20'
       },
@@ -80,6 +86,18 @@ export const FactoryData1 = [
       },
       {
         name: 'Station 4',
+        status: true,
+        reason: 'insufficient charge',
+        time: '2021/4/21 21:20'
+      },
+      {
+        name: 'Station 5',
+        status: true,
+        reason: '',
+        time: '2021/4/21 09:20'
+      },
+      {
+        name: 'Station 6',
         status: false,
         reason: 'insufficient charge',
         time: '2021/4/21 21:20'
@@ -94,13 +112,13 @@ export const FactoryData2 = [
     stationList: [
       {
         name: 'Station 1',
-        status: false,
+        status: true,
         reason: 'power is error',
         time: '2021/4/21 09:52'
       },
       {
         name: 'Station 2',
-        status: true,
+        status: false,
         reason: '',
         time: '2021/4/21 13:20'
       },
@@ -112,7 +130,7 @@ export const FactoryData2 = [
       },
       {
         name: 'Station 4',
-        status: false,
+        status: true,
         reason: 'insufficient charge',
         time: '2021/4/21 15:20'
       },
@@ -144,6 +162,12 @@ export const FactoryData2 = [
         status: false,
         reason: 'insufficient charge',
         time: '2021/4/21 20:20'
+      },
+      {
+        name: 'Station 5',
+        status: false,
+        reason: 'insufficient charge',
+        time: '2021/4/21 21:20'
       },
     ]
   },

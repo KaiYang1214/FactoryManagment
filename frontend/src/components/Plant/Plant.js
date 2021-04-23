@@ -28,7 +28,7 @@ const Plant = ({ plantData }) => {
       </Style.Plant>
       <div style={{display: 'flex'}}>
         {
-          plantData.stationList.map((station) => (<Machine data={station} />))
+          plantData.stationList.map((station) => (<Machine plant={plantData.plant} data={station} />))
         }
       </div>
     </Style.Block>

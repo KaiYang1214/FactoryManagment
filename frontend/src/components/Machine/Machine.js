@@ -13,7 +13,7 @@ import DetailModal from "../compos/DetailModal/DetailModal.js"
 import { useModal } from '../../hooks';
 import * as Style from "./style";
 
-const Machine = ({ data }) => {
+const Machine = ({ plant, data }) => {
   const { t } = useTranslation();
   const detailModal = useModal();
   return (
@@ -38,6 +38,7 @@ const Machine = ({ data }) => {
         </div>
       </Style.Block>
       <DetailModal
+        plant={plant}
         modal={detailModal}
         // handleOK={handleOK}
       />
